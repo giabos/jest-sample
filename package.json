@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "start": "parcel serve src/index.html",
     "build": "parcel build src/index.html"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./fileMock.js",
+      "\\.(css|less)$": "../styleMock.js"
+    },
+    "preset": "jest-puppeteer"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +23,10 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "parcel": "^1.12.3"
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "jest-puppeteer": "^4.2.0",
+    "parcel": "^1.12.3",
+    "puppeteer": "^1.18.1"
   }
 }
