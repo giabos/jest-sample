@@ -46,5 +46,19 @@ describe('Localhost', () => {
 
     it('should be titled "Hello"', async () => {
         await expect(page.title()).resolves.toMatch('Hello');
+
+
+        const body = await page.$('body');
+        expect(await body.$eval('button', node => node.innerText)).toBe('0');
+
+        const btn = await page.$('button');
+        await btn.click();
+        expect(await body.$eval('button', node => node.innerText)).toBe('1');
+        await btn.click();
+        expect(await body.$eval('button', node => node.innerText)).toBe('2');
+
+
+
+
     });
 });
