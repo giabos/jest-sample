@@ -25,6 +25,7 @@
   "devDependencies": {
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
+    "jest-image-snapshot": "^2.9.0",
     "jest-puppeteer": "^4.2.0",
     "parcel": "^1.12.3",
     "puppeteer": "^1.18.1"

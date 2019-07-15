@@ -4,6 +4,10 @@
 var cssUrl = require('css-url-regex')
 
 
+const { toMatchImageSnapshot } = require('jest-image-snapshot');
+expect.extend({ toMatchImageSnapshot });
+
+
 
 test('should work', () => {
     expect(1).toBe(1);
@@ -16,14 +20,9 @@ test('should work', () => {
 
 
 describe('suite 1', () => {
-
-
     it('should work', () => {
         expect(1).toBe(1);
     });
-
-
-
 });
 
 
@@ -58,6 +57,8 @@ describe('Localhost', () => {
         expect(await body.$eval('button', node => node.innerText)).toBe('2');
 
 
+        const image = await page.screenshot();
+        expect(image).toMatchImageSnapshot();
 
 
     });
