@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:update": "jest --updateSnapshot",
     "start": "parcel serve src/index.html",
     "build": "parcel build src/index.html"
   },
